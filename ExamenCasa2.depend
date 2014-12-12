@@ -1,0 +1,10 @@
+# depslib dependency file v1.0
+1418384219 source:c:\users\jesus\dropbox\clases unitec\programacion 3\projects\examencasa2\main.cpp
+	<iostream>
+	<stdlib.h>
+	<time.h>
+	<sstream>
+	<string>
+	<utility>
+	<string.h>
+
