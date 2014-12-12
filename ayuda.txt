@@ -1,0 +1,2 @@
+http://stackoverflow.com/questions/6687635/problem-with-array-of-stdpair-in-c
+http://stackoverflow.com/questions/1114741/how-to-convert-int-to-char-c
