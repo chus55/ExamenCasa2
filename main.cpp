@@ -136,10 +136,10 @@ void llenarAdjecentes(int x, int y, char arreglo[][6],pair<int,int> minas[]);
 int Logic(int x, int y, char arreglo[][6],pair<int,int> minas[])
 {
 
-    if(arreglo[x][y]==NULL)
-        return NULL;
-
     int cont = 0;
+
+    if(y==0 || x==0 || y==6 || x==6)
+        return NULL;
 
     cont += despejarAdjacentes(x,y,arreglo,minas);
 
@@ -147,38 +147,38 @@ int Logic(int x, int y, char arreglo[][6],pair<int,int> minas[])
 
     arreglo[x][y]= dig ;
 
-//    if(cont==0)
-//    {
-//        llenarAdjecentes(x,y,arreglo,minas);
-//    }
+    if(cont==0)
+    {
+        llenarAdjecentes(x,y,arreglo,minas);
+    }
 
     return cont;
 }
 
 void llenarAdjecentes(int x, int y, char arreglo[][6],pair<int,int> minas[])
 {
-        if(arreglo[x+1][y]!=NULL && (x+1!=6 && y!=0))
+
             Logic(x+1,y,arreglo,minas);
 
-        if(arreglo[x-1][y]!=NULL && (x-1!=0 && y!=0))
+
             Logic(x-1,y,arreglo,minas);
 
-        if(arreglo[x][y+1]!=NULL && (x!=0 && y+1!=6))
+
             Logic(x,y+1,arreglo,minas);
 
-        if(arreglo[x][y-1]!=NULL && (x!=0 && y-1!=0))
+
             Logic(x,y-1,arreglo,minas);
 
-        if(arreglo[x+1][y+1]!=NULL && (x+1!=6 && y+1!=6))
+
             Logic(x+1,y+1,arreglo,minas);
 
-        if(arreglo[x+1][y-1]!=NULL && (x+1!=6 && y-1!=0))
+
             Logic(x+1,y-1,arreglo,minas);
 
-        if(arreglo[x-1][y+1]!=NULL && (x-1!=0 && y+1!=6))
+
             Logic(x-1,y+1,arreglo,minas);
 
-        if(arreglo[x-1][y-1]!=NULL && (x-1!=0 && y-1!=0))
+
             Logic(x-1,y-1,arreglo,minas);
 }
 
